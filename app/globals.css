@@ -386,7 +386,7 @@ h4, h5, h6 { font-family: var(--font-sans); }
 .footer {
   background: linear-gradient(135deg, #1a3a35 0%, #0f2520 100%);
   color: rgba(255,255,255,0.75);
-  margin-top: 48px;
+  margin-top: 64px;
   padding: 44px 0 0;
 }
 .footer-grid {
