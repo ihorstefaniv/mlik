@@ -32,7 +32,9 @@
       "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\procurement\")",
       "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\services\")",
       "Bash(Write-Host \"Directories created\")",
-      "PowerShell(New-Item *)"
+      "PowerShell(New-Item *)",
+      "WebFetch(domain:localhost)",
+      "PowerShell(Get-Process *)"
     ]
   }
 }

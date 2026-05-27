@@ -1,25 +1,21 @@
-'use client';
-
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
+import ContactForm from '@/components/ContactForm';
 
-// Note: metadata export can't be in 'use client', moved to separate component
-// Using suppressHydrationWarning for form submission
+export const metadata: Metadata = { title: 'Контакти' };
 
-const contacts = [
-  { icon: '📍', label: 'Адреса', value: `${siteConfig.contact.address}, ${siteConfig.contact.city}, ${siteConfig.contact.region}, ${siteConfig.contact.zip}` },
+const contactItems = [
+  {
+    icon: '📍',
+    label: 'Адреса',
+    value: `${siteConfig.contact.address}, ${siteConfig.contact.city}, ${siteConfig.contact.region}, ${siteConfig.contact.zip}`,
+  },
   { icon: '📞', label: 'Телефон', value: siteConfig.contact.phone, href: siteConfig.contact.phoneHref },
   { icon: '✉️', label: 'Email', value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
   { icon: '🕐', label: 'Графік роботи', value: 'Поліклініка: Пн–Пт 8:00–16:00\nСтаціонар: цілодобово' },
 ];
 
 export default function ContactsPage() {
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    alert('Дякуємо за ваше повідомлення! Ми зв\'яжемося з вами найближчим часом.');
-    (e.target as HTMLFormElement).reset();
-  }
-
   return (
     <>
       <div className="page-header">
@@ -37,7 +33,7 @@ export default function ContactsPage() {
               <h2 className="sh" style={{ marginBottom: 16 }}>Контактна інформація</h2>
               <div className="card" style={{ padding: 20 }}>
                 <div className="contact-block">
-                  {contacts.map(c => (
+                  {contactItems.map(c => (
                     <div key={c.label} className="contact-item">
                       <div className="contact-icon">{c.icon}</div>
                       <div>
@@ -53,22 +49,19 @@ export default function ContactsPage() {
                 </div>
               </div>
 
-              {/* Social */}
               <div style={{ marginTop: 16 }}>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', marginBottom: 8 }}>Ми в соцмережах:</p>
                 <div style={{ display: 'flex', gap: 10 }}>
                   <a href={siteConfig.social.facebook} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 6,
                     background: '#1877F2', color: '#fff',
                     padding: '7px 14px', borderRadius: 8, fontSize: '0.82rem', fontWeight: 600,
-                    textDecoration: 'none',
+                    textDecoration: 'none', display: 'inline-block',
                   }}>Facebook</a>
                   <a href={siteConfig.social.instagram} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 6,
                     background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)',
                     color: '#fff',
                     padding: '7px 14px', borderRadius: 8, fontSize: '0.82rem', fontWeight: 600,
-                    textDecoration: 'none',
+                    textDecoration: 'none', display: 'inline-block',
                   }}>Instagram</a>
                 </div>
               </div>
@@ -78,39 +71,7 @@ export default function ContactsPage() {
             <div>
               <h2 className="sh" style={{ marginBottom: 16 }}>Зворотній зв'язок</h2>
               <div className="card" style={{ padding: 20 }}>
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label className="form-label">Ваше ім'я *</label>
-                    <input type="text" required className="form-input" placeholder="Введіть ваше ім'я" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Email *</label>
-                    <input type="email" required className="form-input" placeholder="your@email.com" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Телефон</label>
-                    <input type="tel" className="form-input" placeholder="+380" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Тема звернення</label>
-                    <select className="form-select">
-                      <option>Запис на прийом</option>
-                      <option>Консультація</option>
-                      <option>Скарга чи пропозиція</option>
-                      <option>Інше</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Повідомлення *</label>
-                    <textarea required rows={5} className="form-textarea" placeholder="Опишіть ваше питання..." />
-                  </div>
-                  <button type="submit" style={{
-                    width: '100%', background: 'var(--color-primary)', color: '#fff',
-                    border: 'none', borderRadius: 10, padding: '11px', cursor: 'pointer',
-                    fontWeight: 700, fontSize: '0.9rem', fontFamily: 'var(--font-sans)',
-                    transition: 'background 0.2s',
-                  }}>Відправити повідомлення</button>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>

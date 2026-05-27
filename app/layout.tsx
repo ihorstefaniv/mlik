@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     template: '%s | Миколаївська міська лікарня',
   },
   description: 'Миколаївська міська лікарня — спеціалізована медична допомога. Амбулаторне та стаціонарне лікування, діагностика, медичні огляди.',
-  keywords: ['лікарня', 'Миколаїв', 'медична допомога', 'стаціонар', 'поліклініка'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
