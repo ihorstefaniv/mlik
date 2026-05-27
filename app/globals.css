@@ -49,7 +49,7 @@ h4, h5, h6 { font-family: var(--font-sans); }
 .page-header {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: #fff;
-  padding: 20px 0 24px;
+  padding: 28px 0 32px;
   position: relative;
   overflow: hidden;
 }
@@ -386,14 +386,14 @@ h4, h5, h6 { font-family: var(--font-sans); }
 .footer {
   background: linear-gradient(135deg, #1a3a35 0%, #0f2520 100%);
   color: rgba(255,255,255,0.75);
-  margin-top: 32px;
-  padding: 32px 0 0;
+  margin-top: 48px;
+  padding: 44px 0 0;
 }
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  padding-bottom: 24px;
+  gap: 28px;
+  padding-bottom: 32px;
 }
 @media (min-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1024px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; } }
@@ -448,13 +448,13 @@ h4, h5, h6 { font-family: var(--font-sans); }
 .bg-blue-light     { background: var(--color-bg-blue-light); }
 
 /* ─── Section spacing ─── */
-.section { padding: 24px 0; }
-.section-sm { padding: 16px 0; }
-.section-lg { padding: 40px 0; }
+.section { padding: 32px 0; }
+.section-sm { padding: 20px 0; }
+.section-lg { padding: 52px 0; }
 @media (min-width: 768px) {
-  .section    { padding: 36px 0; }
-  .section-sm { padding: 24px 0; }
-  .section-lg { padding: 56px 0; }
+  .section    { padding: 48px 0; }
+  .section-sm { padding: 28px 0; }
+  .section-lg { padding: 72px 0; }
 }
 
 /* ─── Grid helpers ─── */
