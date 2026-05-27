@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(Get-ChildItem D:mlik_temp *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh api *)",
+      "Bash(curl *)",
+      "Bash(git rm *)",
+      "Bash(npm -v)",
+      "Bash(npx --version)",
+      "Bash(rm -f about.html ambulatory.html contacts.html doctors.html idp.html index.html inpatient.html procurement.html services.html CHECKLIST.md SETUP.md README.md package-lock.json)",
+      "Bash(rm -rf assets/css assets/js)",
+      "Bash(npx create-next-app@15 . --typescript --app --no-tailwind --no-eslint --no-src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(mkdir -p /tmp/mlik-assets)",
+      "Bash(cp -r assets /tmp/mlik-assets/)",
+      "Bash(rm -rf assets .claude)",
+      "Bash(npm install *)",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\lib\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\components\\\\layout\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\about\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\ambulatory\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\contacts\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\doctors\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\idp\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\inpatient\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\procurement\")",
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\mlik\\\\app\\\\services\")",
+      "Bash(Write-Host \"Directories created\")",
+      "PowerShell(New-Item *)"
+    ]
+  }
+}
