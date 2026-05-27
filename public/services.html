@@ -5,7 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Платні послуги | Миколаївська міська лікарня</title>
   <meta name="description" content="Платні медичні послуги: медичні огляди, лабораторні дослідження, оздоровчі масажі та інші послуги.">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .svc-card { background: white; padding: 22px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); border-top: 4px solid var(--primary); }
+    .svc-card.secondary { border-top-color: var(--secondary); }
+    .svc-card.accent { border-top-color: var(--accent); }
+    .svc-card h3 { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .svc-card > p { color: var(--text-light); font-size: 0.875rem; line-height: 1.7; margin-bottom: 10px; }
+    .svc-card ul { padding-left: 18px; color: var(--text-light); font-size: 0.875rem; line-height: 1.9; margin-bottom: 14px; }
+    .svc-card .svc-cta { padding-top: 12px; border-top: 1px solid var(--border); }
+    .svc-card .svc-cta a { color: var(--primary); font-weight: 700; font-size: 0.875rem; }
+    .svc-card.secondary .svc-cta a { color: var(--secondary); }
+    .svc-card.accent .svc-cta a { color: var(--accent); }
+
+    .other-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; background: white; padding: 16px 18px; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+    .other-row-body h4 { font-size: 0.95rem; margin-bottom: 3px; }
+    .other-row-body p { color: var(--text-light); font-size: 0.85rem; }
+    .other-row a { color: var(--primary); font-weight: 700; font-size: 0.875rem; white-space: nowrap; }
+
+    .lab-grid { display: grid; gap: 18px; }
+    @media (min-width: 600px) { .lab-grid { grid-template-columns: 1fr 1fr; } }
+    .lab-item h3 { font-size: 1rem; color: var(--primary); margin-bottom: 8px; }
+  </style>
 </head>
 <body data-page="services">
   <header class="header"></header>
@@ -17,36 +40,21 @@
     </div>
   </section>
 
-  <section style="padding: 60px 0;">
+  <section class="page-section">
     <div class="container">
-      
-      <!-- Вступ -->
-      <div style="max-width: 900px; margin: 0 auto 60px; text-align: center;">
-        <p style="font-size: 1.1rem; color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">
-          Окрім безкоштовних послуг за програмою медичних гарантій, наша лікарня надає широкий спектр платних медичних послуг для вашої зручності.
-        </p>
-        
-        <div style="background: var(--bg-blue-light); padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-          <p style="color: var(--text); line-height: 1.8;">
-            <strong>Важливо:</strong> Всі базові медичні послуги надаються безкоштовно за програмою медичних гарантій. Платні послуги - це додаткові обстеження та процедури за вашим бажанням.
-          </p>
-        </div>
+
+      <div class="highlight-box section-gap">
+        <p><strong>Важливо:</strong> Всі базові медичні послуги надаються безкоштовно за програмою медичних гарантій. Платні послуги — це додаткові обстеження та процедури за вашим бажанням.</p>
       </div>
 
       <!-- Медичні огляди -->
-      <div id="medical-exams" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Медичні огляди</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); border-top: 4px solid var(--primary);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text); display: flex; align-items: center; gap: 10px;">
-              <span style="font-size: 2rem;">🚗</span>
-              Водійська комісія
-            </h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-              Повний медичний огляд для отримання або продовження водійського посвідчення
-            </p>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
+      <div id="medical-exams" class="section-gap">
+        <div class="sh center"><h2>Медичні огляди</h2></div>
+        <div class="grid-3">
+          <div class="svc-card">
+            <h3>🚗 Водійська комісія</h3>
+            <p>Повний медичний огляд для отримання або продовження водійського посвідчення.</p>
+            <ul>
               <li>Огляд терапевта</li>
               <li>Огляд хірурга</li>
               <li>Огляд невропатолога</li>
@@ -54,77 +62,51 @@
               <li>Огляд ЛОРа</li>
               <li>Психіатр та нарколог</li>
             </ul>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-              <a href="tel:+380675600610" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-                Записатися →
-              </a>
-            </div>
+            <div class="svc-cta"><a href="tel:+380675600610">Записатися →</a></div>
           </div>
-
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); border-top: 4px solid var(--secondary);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text); display: flex; align-items: center; gap: 10px;">
-              <span style="font-size: 2rem;">🔫</span>
-              Медогляд для зброї
-            </h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-              Медичне обстеження для отримання дозволу на зброю
-            </p>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
+          <div class="svc-card secondary">
+            <h3>🔫 Медогляд для зброї</h3>
+            <p>Медичне обстеження для отримання дозволу на зброю.</p>
+            <ul>
               <li>Комплексний огляд спеціалістів</li>
               <li>Психіатричне обстеження</li>
               <li>Наркологічне обстеження</li>
               <li>Оформлення довідки</li>
             </ul>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-              <a href="tel:+380675600610" style="color: var(--secondary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-                Записатися →
-              </a>
-            </div>
+            <div class="svc-cta"><a href="tel:+380675600610" style="color:var(--secondary);">Записатися →</a></div>
           </div>
-
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); border-top: 4px solid var(--accent);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text); display: flex; align-items: center; gap: 10px;">
-              <span style="font-size: 2rem;">💼</span>
-              Медогляд для роботи
-            </h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-              Попередні та періодичні медичні огляди працівників
-            </p>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
+          <div class="svc-card accent">
+            <h3>💼 Медогляд для роботи</h3>
+            <p>Попередні та періодичні медичні огляди працівників.</p>
+            <ul>
               <li>Огляд за профілем роботи</li>
               <li>Необхідні аналізи</li>
               <li>Флюорографія</li>
               <li>Оформлення медичної книжки</li>
             </ul>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-              <a href="tel:+380675600610" style="color: var(--accent); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-                Записатися →
-              </a>
-            </div>
+            <div class="svc-cta"><a href="tel:+380675600610" style="color:var(--accent);">Записатися →</a></div>
           </div>
         </div>
       </div>
 
       <!-- Лабораторні дослідження -->
-      <div id="lab-tests" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Лабораторні дослідження</h2>
-        
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
-            <div>
-              <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary);">Загальноклінічні аналізи</h3>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+      <div id="lab-tests" class="section-gap">
+        <div class="sh center"><h2>Лабораторні дослідження</h2></div>
+        <div class="card">
+          <div class="lab-grid mb-3">
+            <div class="lab-item">
+              <h3>Загальноклінічні аналізи</h3>
+              <ul class="ul-list">
                 <li>Загальний аналіз крові розгорнутий</li>
                 <li>Загальний аналіз сечі</li>
                 <li>Аналіз калу на я/г</li>
                 <li>Коагулограма</li>
-                <li>Швидкість осідання еритроцитів (ШОЕ)</li>
+                <li>ШОЕ</li>
               </ul>
             </div>
-
-            <div>
-              <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary);">Біохімічні дослідження</h3>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+            <div class="lab-item">
+              <h3>Біохімічні дослідження</h3>
+              <ul class="ul-list">
                 <li>Глюкоза крові</li>
                 <li>Холестерин загальний</li>
                 <li>Ліпідограма</li>
@@ -132,20 +114,18 @@
                 <li>Ниркові проби (креатинін, сечовина)</li>
               </ul>
             </div>
-
-            <div>
-              <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary);">Гормональні дослідження</h3>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+            <div class="lab-item">
+              <h3>Гормональні дослідження</h3>
+              <ul class="ul-list">
                 <li>Гормони щитоподібної залози (ТТГ, Т3, Т4)</li>
                 <li>Статеві гормони</li>
                 <li>Гормони гіпофіза</li>
                 <li>Кортизол</li>
               </ul>
             </div>
-
-            <div>
-              <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary);">Серологічні дослідження</h3>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+            <div class="lab-item">
+              <h3>Серологічні дослідження</h3>
+              <ul class="ul-list">
                 <li>Група крові та резус-фактор</li>
                 <li>Антитіла до інфекцій</li>
                 <li>Онкомаркери</li>
@@ -153,101 +133,73 @@
               </ul>
             </div>
           </div>
-
-          <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-blue-light); border-radius: var(--border-radius); text-align: center;">
-            <p style="color: var(--text); margin-bottom: 1rem; font-size: 1.1rem;">
-              <strong>Швидкий результат:</strong> більшість аналізів готові протягом 1-2 днів
-            </p>
-            <a href="tel:+380675600610" style="display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none;">
-              Записатися на аналізи
-            </a>
+          <div class="cta-card">
+            <p><strong>Швидкий результат:</strong> більшість аналізів готові протягом 1–2 днів</p>
+            <a href="tel:+380675600610" class="btn-white">Записатися на аналізи</a>
           </div>
         </div>
       </div>
 
       <!-- Оздоровчі масажі -->
-      <div id="massage" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Оздоровчі масажі</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-          <div style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%); color: white; padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">💆</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Класичний масаж</h3>
-            <p style="opacity: 0.9; line-height: 1.8;">
-              Загальний оздоровчий масаж всього тіла або окремих зон
-            </p>
+      <div id="massage" class="section-gap">
+        <div class="sh center"><h2>Оздоровчі масажі</h2></div>
+        <div class="grid-3 mb-2">
+          <div class="grad-card bg-grad-primary">
+            <span class="grad-icon">💆</span>
+            <h3>Класичний масаж</h3>
+            <p>Загальний оздоровчий масаж всього тіла або окремих зон</p>
           </div>
-
-          <div style="background: linear-gradient(135deg, var(--secondary) 0%, #4A9FD5 100%); color: white; padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🧘</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Лікувальний масаж</h3>
-            <p style="opacity: 0.9; line-height: 1.8;">
-              Спеціалізований масаж при захворюваннях опорно-рухового апарату
-            </p>
+          <div class="grad-card bg-secondary">
+            <span class="grad-icon">🧘</span>
+            <h3>Лікувальний масаж</h3>
+            <p>Спеціалізований масаж при захворюваннях опорно-рухового апарату</p>
           </div>
-
-          <div style="background: linear-gradient(135deg, var(--accent) 0%, #45B0A4 100%); color: white; padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🤰</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Масаж для вагітних</h3>
-            <p style="opacity: 0.9; line-height: 1.8;">
-              Спеціальний м'який масаж для майбутніх мам
-            </p>
+          <div class="grad-card bg-accent">
+            <span class="grad-icon">🤰</span>
+            <h3>Масаж для вагітних</h3>
+            <p>Спеціальний м'який масаж для майбутніх мам</p>
           </div>
         </div>
-
-        <div style="margin-top: 30px; background: white; padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); text-align: center;">
-          <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text);">Курси масажу</h4>
-          <p style="color: var(--text-light); margin-bottom: 1.5rem;">
-            Рекомендуємо курс з 10-15 сеансів для досягнення найкращого ефекту
-          </p>
-          <a href="tel:+380675600610" style="display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none;">
-            Записатися на масаж
-          </a>
+        <div class="card text-center">
+          <h4 class="mb-1">Курси масажу</h4>
+          <p class="text-muted mb-2" style="font-size:0.875rem;">Рекомендуємо курс з 10–15 сеансів для досягнення найкращого ефекту</p>
+          <a href="tel:+380675600610" class="btn-white" style="background:var(--primary);color:white;">Записатися на масаж</a>
         </div>
       </div>
 
       <!-- Інші послуги -->
-      <div id="other" style="margin-bottom: 40px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Інші послуги</h2>
-        
-        <div style="display: grid; gap: 20px; max-width: 900px; margin: 0 auto;">
-          <div style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <h4 style="font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem;">Виїзд лікаря додому</h4>
-              <p style="color: var(--text-light); font-size: 0.95rem;">Консультація лікаря вдома для тих, хто не може відвідати лікарню</p>
+      <div id="other" class="section-gap">
+        <div class="sh center"><h2>Інші послуги</h2></div>
+        <div style="display:grid;gap:10px;max-width:820px;margin:0 auto;">
+          <div class="other-row">
+            <div class="other-row-body">
+              <h4>Виїзд лікаря додому</h4>
+              <p>Консультація лікаря вдома для тих, хто не може відвідати лікарню</p>
             </div>
-            <a href="tel:+380675600610" style="color: var(--primary); font-weight: 700; text-decoration: none; white-space: nowrap;">Викликати →</a>
+            <a href="tel:+380675600610">Викликати →</a>
           </div>
-
-          <div style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <h4 style="font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem;">Довідки та висновки</h4>
-              <p style="color: var(--text-light); font-size: 0.95rem;">Оформлення медичних довідок різного типу</p>
+          <div class="other-row">
+            <div class="other-row-body">
+              <h4>Довідки та висновки</h4>
+              <p>Оформлення медичних довідок різного типу</p>
             </div>
-            <a href="tel:+380675600610" style="color: var(--primary); font-weight: 700; text-decoration: none; white-space: nowrap;">Замовити →</a>
+            <a href="tel:+380675600610">Замовити →</a>
           </div>
-
-          <div style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <h4 style="font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem;">Поглиблені обстеження</h4>
-              <p style="color: var(--text-light); font-size: 0.95rem;">Комплексні чекапи та профілактичні програми</p>
+          <div class="other-row">
+            <div class="other-row-body">
+              <h4>Поглиблені обстеження</h4>
+              <p>Комплексні чекапи та профілактичні програми</p>
             </div>
-            <a href="tel:+380675600610" style="color: var(--primary); font-weight: 700; text-decoration: none; white-space: nowrap;">Дізнатись →</a>
+            <a href="tel:+380675600610">Дізнатись →</a>
           </div>
         </div>
       </div>
 
-      <!-- Контакти -->
-      <div style="background: var(--bg-blue-light); padding: 3rem; border-radius: var(--border-radius-lg); text-align: center; max-width: 900px; margin: 60px auto 0;">
-        <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">Записатися на платні послуги</h3>
-        <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem;">
-          Зателефонуйте нам для уточнення вартості та запису на прийом
-        </p>
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <a href="tel:+380675600610" style="display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: white; padding: 15px 30px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none; font-size: 1.1rem;">
-            <span style="font-size: 1.5rem;">📞</span> +38 067 5 600 610
-          </a>
-        </div>
+      <!-- Запис -->
+      <div class="cta-card" style="max-width:820px;margin:0 auto;">
+        <h3 style="font-size:1.3rem;">Записатися на платні послуги</h3>
+        <p>Зателефонуйте для уточнення вартості та запису на прийом</p>
+        <a href="tel:+380675600610" class="btn-white" style="font-size:1.05rem;">📞 +38 067 5 600 610</a>
       </div>
 
     </div>
@@ -255,21 +207,8 @@
 
   <footer class="footer"></footer>
 
-  <script src="/assets/js/config.js"></script>
-  <script src="/assets/js/components/header.js"></script>
-  <script src="/assets/js/components/footer.js"></script>
-
-  <style>
-    @media (max-width: 768px) {
-      div[style*="display: flex; justify-content: space-between"] {
-        flex-direction: column;
-        align-items: flex-start !important;
-        gap: 1rem;
-      }
-      div[style*="grid-template-columns: 1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  </style>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/components/header.js"></script>
+  <script src="../assets/js/components/footer.js"></script>
 </body>
 </html>

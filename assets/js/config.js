@@ -96,7 +96,7 @@ const MENU = [
         url: 'about.html'
       },
       {
-        title: 'Навчність лікарів',
+        title: 'Наші лікарі',
         url: 'doctors.html'
       },
       {

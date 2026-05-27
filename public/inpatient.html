@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Стаціонарна допомога | Миколаївська міська лікарня</title>
   <meta name="description" content="Стаціонарні відділення: терапевтичне, хірургічне, реабілітаційне, акушерсько-гінекологічне, дитяче, інтенсивної терапії.">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .disease-grid { display: grid; gap: 14px; }
+    @media (min-width: 480px) { .disease-grid { grid-template-columns: 1fr 1fr; } }
+    .disease-group h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 6px; }
+  </style>
 </head>
 <body data-page="inpatient">
   <header class="header"></header>
@@ -17,63 +24,42 @@
     </div>
   </section>
 
-  <section style="padding: 60px 0;">
+  <section class="page-section">
     <div class="container">
-      
-      <!-- Терапевтичне відділення -->
-      <div id="therapy" class="department-section" style="margin-bottom: 80px;">
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;">
-          <div style="background: var(--primary); color: white; padding: 3rem; border-radius: var(--border-radius-lg); text-align: center; position: sticky; top: 100px;">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">🏥</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Терапевтичне відділення</h2>
-            <p style="opacity: 0.9; line-height: 1.6;">Лікування терапевтичних захворювань</p>
-          </div>
 
-          <div>
-            <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); margin-bottom: 30px;">
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Про відділення</h3>
-              <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-                Терапевтичне відділення надає спеціалізовану медичну допомогу пацієнтам з різними захворюваннями внутрішніх органів. Відділення розраховане на комфортне перебування пацієнтів та забезпечене всім необхідним медичним обладнанням.
+      <!-- Терапевтичне відділення -->
+      <div id="therapy" class="dept-block">
+        <div class="grid-1-2">
+          <div class="dept-sidebar bg-primary">
+            <span class="dept-icon">🏥</span>
+            <h2>Терапевтичне відділення</h2>
+            <p>Лікування терапевтичних захворювань</p>
+          </div>
+          <div style="display:grid;gap:14px;">
+            <div class="card">
+              <h3 class="text-primary mb-2">Про відділення</h3>
+              <p class="text-muted" style="font-size:0.9rem;line-height:1.8;">
+                Терапевтичне відділення надає спеціалізовану допомогу пацієнтам з різними захворюваннями внутрішніх органів. Відділення забезпечене всім необхідним обладнанням та комфортними умовами перебування.
               </p>
             </div>
-
-            <div style="background: var(--bg-light); padding: 2.5rem; border-radius: var(--border-radius-lg);">
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Які захворювання лікуємо</h3>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                <div>
-                  <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Серцево-судинні:</h4>
-                  <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-                    <li>Гіпертонічна хвороба</li>
-                    <li>Ішемічна хвороба серця</li>
-                    <li>Серцева недостатність</li>
-                    <li>Аритмії</li>
-                  </ul>
+            <div class="card-alt">
+              <h3 class="mb-2">Захворювання, які лікуємо</h3>
+              <div class="disease-grid">
+                <div class="disease-group">
+                  <h4>Серцево-судинні:</h4>
+                  <ul class="ul-list"><li>Гіпертонічна хвороба</li><li>ІХС</li><li>Серцева недостатність</li><li>Аритмії</li></ul>
                 </div>
-                <div>
-                  <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Органів дихання:</h4>
-                  <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-                    <li>Пневмонія</li>
-                    <li>Бронхіт</li>
-                    <li>Бронхіальна астма</li>
-                    <li>ХОЗЛ</li>
-                  </ul>
+                <div class="disease-group">
+                  <h4>Органів дихання:</h4>
+                  <ul class="ul-list"><li>Пневмонія</li><li>Бронхіт</li><li>Бронхіальна астма</li><li>ХОЗЛ</li></ul>
                 </div>
-                <div>
-                  <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Органів травлення:</h4>
-                  <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-                    <li>Гастрит, виразка</li>
-                    <li>Панкреатит</li>
-                    <li>Холецистит</li>
-                    <li>Гепатит</li>
-                  </ul>
+                <div class="disease-group">
+                  <h4>Органів травлення:</h4>
+                  <ul class="ul-list"><li>Гастрит, виразка</li><li>Панкреатит</li><li>Холецистит</li><li>Гепатит</li></ul>
                 </div>
-                <div>
-                  <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Ендокринні:</h4>
-                  <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-                    <li>Цукровий діабет</li>
-                    <li>Захворювання щитоподібної залози</li>
-                    <li>Ожиріння</li>
-                  </ul>
+                <div class="disease-group">
+                  <h4>Ендокринні:</h4>
+                  <ul class="ul-list"><li>Цукровий діабет</li><li>Захворювання щитоподібної залози</li><li>Ожиріння</li></ul>
                 </div>
               </div>
             </div>
@@ -82,19 +68,18 @@
       </div>
 
       <!-- Хірургічне відділення -->
-      <div id="surgery" class="department-section" style="margin-bottom: 80px;">
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start;">
-          <div>
-            <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); margin-bottom: 30px;">
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--secondary);">Про відділення</h3>
-              <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-                Хірургічне відділення забезпечує надання кваліфікованої хірургічної допомоги населенню. Проводяться як планові, так і екстрені операції різного профілю.
+      <div id="surgery" class="dept-block">
+        <div class="grid-2-1">
+          <div style="display:grid;gap:14px;">
+            <div class="card">
+              <h3 style="color:var(--secondary);" class="mb-2">Про відділення</h3>
+              <p class="text-muted" style="font-size:0.9rem;line-height:1.8;">
+                Хірургічне відділення забезпечує кваліфіковану хірургічну допомогу населенню. Проводяться як планові, так і екстрені операції різного профілю.
               </p>
             </div>
-
-            <div style="background: var(--bg-light); padding: 2.5rem; border-radius: var(--border-radius-lg);">
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Види операцій</h3>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px; column-count: 2; column-gap: 2rem;">
+            <div class="card-alt">
+              <h3 class="mb-2">Види операцій</h3>
+              <ul class="ul-list two-col">
                 <li>Апендектомія</li>
                 <li>Холецистектомія</li>
                 <li>Грижосічення</li>
@@ -106,46 +91,32 @@
               </ul>
             </div>
           </div>
-
-          <div style="background: var(--secondary); color: white; padding: 3rem; border-radius: var(--border-radius-lg); text-align: center; position: sticky; top: 100px;">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">⚕️</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Хірургічне відділення</h2>
-            <p style="opacity: 0.9; line-height: 1.6;">Планові та екстрені операції</p>
+          <div class="dept-sidebar bg-secondary">
+            <span class="dept-icon">⚕️</span>
+            <h2>Хірургічне відділення</h2>
+            <p>Планові та екстрені операції</p>
           </div>
         </div>
       </div>
 
       <!-- Акушерсько-гінекологічне відділення -->
-      <div id="gynecology" class="department-section" style="margin-bottom: 80px;">
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;">
-          <div style="background: var(--accent); color: white; padding: 3rem; border-radius: var(--border-radius-lg); text-align: center; position: sticky; top: 100px;">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">👶</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Акушерсько-гінекологічне відділення</h2>
-            <p style="opacity: 0.9; line-height: 1.6;">Допомога майбутнім мамам</p>
+      <div id="gynecology" class="dept-block">
+        <div class="grid-1-2">
+          <div class="dept-sidebar bg-accent">
+            <span class="dept-icon">👶</span>
+            <h2>Акушерсько-гінекологічне відділення</h2>
+            <p>Допомога майбутнім мамам</p>
           </div>
-
-          <div>
-            <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); margin-bottom: 30px;">
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent);">Послуги відділення</h3>
-              <div style="display: grid; gap: 1.5rem;">
-                <div style="padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius); border-left: 4px solid var(--accent);">
-                  <h4 style="color: var(--text); margin-bottom: 0.5rem; font-size: 1.1rem;">Акушерство</h4>
-                  <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-                    <li>Ведення вагітності</li>
-                    <li>Пологи</li>
-                    <li>Післяпологовий догляд</li>
-                    <li>Патологія вагітності</li>
-                  </ul>
-                </div>
-                <div style="padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius); border-left: 4px solid var(--accent);">
-                  <h4 style="color: var(--text); margin-bottom: 0.5rem; font-size: 1.1rem;">Гінекологія</h4>
-                  <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; font-size: 0.95rem;">
-                    <li>Лікування гінекологічних захворювань</li>
-                    <li>Гінекологічні операції</li>
-                    <li>Планування сім'ї</li>
-                    <li>Діагностика та лікування безпліддя</li>
-                  </ul>
-                </div>
+          <div class="card">
+            <h3 style="color:var(--accent);" class="mb-2">Послуги відділення</h3>
+            <div style="display:grid;gap:12px;">
+              <div class="sub-card accent">
+                <h4>Акушерство</h4>
+                <ul class="ul-list mt-1"><li>Ведення вагітності</li><li>Пологи</li><li>Післяпологовий догляд</li><li>Патологія вагітності</li></ul>
+              </div>
+              <div class="sub-card accent">
+                <h4>Гінекологія</h4>
+                <ul class="ul-list mt-1"><li>Лікування гінекологічних захворювань</li><li>Гінекологічні операції</li><li>Планування сім'ї</li><li>Діагностика та лікування безпліддя</li></ul>
               </div>
             </div>
           </div>
@@ -153,84 +124,54 @@
       </div>
 
       <!-- Дитяче відділення -->
-      <div id="pediatrics" class="department-section" style="margin-bottom: 80px;">
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); max-width: 900px; margin: 0 auto;">
-          <div style="text-align: center; margin-bottom: 2rem;">
-            <div style="font-size: 4rem; margin-bottom: 1rem;">🧸</div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">Дитяче відділення</h2>
-            <p style="color: var(--text-light); font-size: 1.1rem;">Спеціалізована медична допомога для дітей</p>
+      <div id="pediatrics" class="dept-block">
+        <div class="card" style="max-width:860px;margin:0 auto;text-align:center;">
+          <div style="font-size:3rem;margin-bottom:12px;">🧸</div>
+          <h2 class="text-primary mb-1">Дитяче відділення</h2>
+          <p class="text-muted mb-3" style="font-size:0.95rem;">Спеціалізована медична допомога для дітей</p>
+          <div class="highlight-box text-left mb-3">
+            <p>Дитяче відділення надає стаціонарну допомогу дітям від народження до 18 років. Є комфортні умови для перебування дитини разом з батьками.</p>
           </div>
-
-          <div style="background: var(--bg-blue-light); padding: 2rem; border-radius: var(--border-radius); margin-bottom: 2rem;">
-            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary);">Про відділення</h3>
-            <p style="color: var(--text-light); line-height: 1.8;">
-              Дитяче відділення надає стаціонарну допомогу дітям від народження до 18 років. Відділення обладнане спеціалізованим дитячим обладнанням та має комфортні умови для перебування дитини разом з батьками.
-            </p>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <div class="grid-2" style="text-align:left;">
             <div>
-              <h4 style="color: var(--primary); margin-bottom: 1rem;">Лікуємо:</h4>
-              <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px;">
-                <li>Гострі респіраторні захворювання</li>
-                <li>Інфекційні захворювання</li>
-                <li>Захворювання органів травлення</li>
-                <li>Алергічні захворювання</li>
-                <li>Неврологічні розлади</li>
-              </ul>
+              <h4 class="text-primary mb-1">Лікуємо:</h4>
+              <ul class="ul-list"><li>Гострі респіраторні захворювання</li><li>Інфекційні захворювання</li><li>Захворювання органів травлення</li><li>Алергічні захворювання</li><li>Неврологічні розлади</li></ul>
             </div>
             <div>
-              <h4 style="color: var(--primary); margin-bottom: 1rem;">Умови перебування:</h4>
-              <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px;">
-                <li>Комфортні палати</li>
-                <li>Можливість перебування з мамою</li>
-                <li>Ігрова кімната</li>
-                <li>Спеціалізоване харчування</li>
-                <li>Цілодобовий медичний нагляд</li>
-              </ul>
+              <h4 class="text-primary mb-1">Умови перебування:</h4>
+              <ul class="ul-list"><li>Комфортні палати</li><li>Можливість перебування з мамою</li><li>Ігрова кімната</li><li>Спеціалізоване харчування</li><li>Цілодобовий медичний нагляд</li></ul>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Реабілітаційне відділення -->
-      <div id="rehabilitation" class="department-section" style="margin-bottom: 80px;">
-        <div style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%); color: white; padding: 4rem; border-radius: var(--border-radius-lg); text-align: center;">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">💪</div>
-          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Реабілітаційне відділення</h2>
-          <p style="font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 2rem;">
+      <div id="rehabilitation" class="dept-block">
+        <div class="bg-grad-primary" style="padding:28px 20px;border-radius:var(--border-radius-lg);color:white;text-align:center;">
+          <div style="font-size:3rem;margin-bottom:12px;">💪</div>
+          <h2 style="color:white;margin-bottom:8px;">Реабілітаційне відділення</h2>
+          <p style="opacity:0.9;max-width:600px;margin:0 auto 20px;font-size:0.95rem;">
             Комплексна програма відновлення після захворювань та травм
           </p>
-          
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; text-align: left;">
-            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: var(--border-radius);">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Фізіотерапія</h4>
-              <p style="font-size: 0.9rem; opacity: 0.9;">Сучасні методи фізіотерапевтичного лікування</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: var(--border-radius);">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">ЛФК</h4>
-              <p style="font-size: 0.9rem; opacity: 0.9;">Лікувальна фізкультура під наглядом спеціалістів</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: var(--border-radius);">
-              <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Масаж</h4>
-              <p style="font-size: 0.9rem; opacity: 0.9;">Лікувальний та реабілітаційний масаж</p>
-            </div>
+          <div class="feature-boxes">
+            <div class="feature-box"><span class="ficon">🧘</span><h4>Фізіотерапія</h4><p>Сучасні методи фізіотерапевтичного лікування</p></div>
+            <div class="feature-box"><span class="ficon">🏃</span><h4>ЛФК</h4><p>Лікувальна фізкультура під наглядом спеціалістів</p></div>
+            <div class="feature-box"><span class="ficon">💆</span><h4>Масаж</h4><p>Лікувальний та реабілітаційний масаж</p></div>
           </div>
         </div>
       </div>
 
       <!-- Приймальне відділення -->
-      <div id="admission" class="department-section" style="margin-bottom: 80px;">
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-          <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Приймальне відділення</h2>
-          
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <div id="admission" class="dept-block">
+        <div class="card">
+          <div class="sh center"><h2>Приймальне відділення</h2></div>
+          <div class="grid-2">
             <div>
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Функції відділення</h3>
-              <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-                Приймальне відділення працює цілодобово. Тут проводиться первинний огляд пацієнтів, необхідна діагностика та визначення профілю відділення для госпіталізації.
+              <h3 class="mb-2">Функції відділення</h3>
+              <p class="text-muted mb-2" style="font-size:0.9rem;line-height:1.8;">
+                Приймальне відділення працює цілодобово. Тут проводиться первинний огляд, необхідна діагностика та визначення профілю відділення для госпіталізації.
               </p>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+              <ul class="ul-list">
                 <li>Цілодобовий прийом пацієнтів</li>
                 <li>Надання екстреної допомоги</li>
                 <li>Первинна діагностика</li>
@@ -238,11 +179,10 @@
                 <li>Направлення у профільні відділення</li>
               </ul>
             </div>
-
-            <div style="background: var(--bg-blue-light); padding: 2rem; border-radius: var(--border-radius);">
-              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Що взяти з собою</h3>
-              <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
-                <li>Паспорт або інший документ, що посвідчує особу</li>
+            <div class="card-blue" style="border-radius:var(--border-radius);">
+              <h3 class="text-primary mb-2">Що взяти з собою</h3>
+              <ul class="ul-list">
+                <li>Паспорт або інший документ</li>
                 <li>Медичну картку (якщо є)</li>
                 <li>Результати попередніх обстежень</li>
                 <li>Список ліків, які приймаєте</li>
@@ -255,31 +195,18 @@
       </div>
 
       <!-- Відділення інтенсивної терапії -->
-      <div id="intensive-care" class="department-section">
-        <div style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); color: white; padding: 4rem; border-radius: var(--border-radius-lg); text-align: center;">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🚨</div>
-          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Відділення інтенсивної терапії</h2>
-          <p style="font-size: 1.2rem; opacity: 0.95; max-width: 800px; margin: 0 auto;">
-            Цілодобова інтенсивна терапія для пацієнтів у критичному стані. Відділення обладнане сучасними системами життєзабезпечення та моніторингу життєво важливих функцій організму.
+      <div id="intensive-care" class="dept-block">
+        <div class="bg-grad-danger" style="padding:28px 20px;border-radius:var(--border-radius-lg);color:white;text-align:center;">
+          <div style="font-size:3rem;margin-bottom:12px;">🚨</div>
+          <h2 style="color:white;margin-bottom:10px;">Відділення інтенсивної терапії</h2>
+          <p style="opacity:0.95;max-width:700px;margin:0 auto 22px;font-size:0.95rem;line-height:1.7;">
+            Цілодобова інтенсивна терапія для пацієнтів у критичному стані. Відділення обладнане сучасними системами життєзабезпечення та моніторингу.
           </p>
-          
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
-            <div style="background: rgba(255,255,255,0.2); padding: 1.2rem; border-radius: var(--border-radius); text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏰</div>
-              <p style="font-size: 0.9rem; font-weight: 600;">Цілодобовий моніторинг</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 1.2rem; border-radius: var(--border-radius); text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 0.5rem;">💉</div>
-              <p style="font-size: 0.9rem; font-weight: 600;">Інтенсивне лікування</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 1.2rem; border-radius: var(--border-radius); text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
-              <p style="font-size: 0.9rem; font-weight: 600;">Сучасне обладнання</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 1.2rem; border-radius: var(--border-radius); text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 0.5rem;">👨‍⚕️</div>
-              <p style="font-size: 0.9rem; font-weight: 600;">Досвідчені лікарі</p>
-            </div>
+          <div class="feature-boxes">
+            <div class="feature-box"><span class="ficon">⏰</span><h4>Цілодобовий моніторинг</h4></div>
+            <div class="feature-box"><span class="ficon">💉</span><h4>Інтенсивне лікування</h4></div>
+            <div class="feature-box"><span class="ficon">🔬</span><h4>Сучасне обладнання</h4></div>
+            <div class="feature-box"><span class="ficon">👨‍⚕️</span><h4>Досвідчені лікарі</h4></div>
           </div>
         </div>
       </div>
@@ -289,23 +216,8 @@
 
   <footer class="footer"></footer>
 
-  <script src="/assets/js/config.js"></script>
-  <script src="/assets/js/components/header.js"></script>
-  <script src="/assets/js/components/footer.js"></script>
-
-  <style>
-    @media (max-width: 768px) {
-      .department-section > div {
-        grid-template-columns: 1fr !important;
-      }
-      [style*="column-count"] {
-        column-count: 1 !important;
-      }
-      [style*="position: sticky"] {
-        position: relative !important;
-        top: auto !important;
-      }
-    }
-  </style>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/components/header.js"></script>
+  <script src="../assets/js/components/footer.js"></script>
 </body>
 </html>

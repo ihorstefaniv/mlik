@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Амбулаторна допомога | Миколаївська міська лікарня</title>
   <meta name="description" content="Амбулаторна медична допомога: клініко-діагностичне відділення, УЗД, лабораторія, рентгенодіагностика, рання діагностика.">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .uzd-two { display: grid; gap: 6px; columns: unset; }
+    @media (min-width: 480px) { .uzd-two { grid-template-columns: 1fr 1fr; } }
+  </style>
 </head>
 <body data-page="ambulatory">
   <header class="header"></header>
@@ -17,27 +23,25 @@
     </div>
   </section>
 
-  <section style="padding: 60px 0;">
+  <section class="page-section">
     <div class="container">
-      
+
       <!-- Клініко-діагностичне відділення -->
-      <div id="clinical" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Клініко-діагностичне відділення</h2>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Про відділення</h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-              Клініко-діагностичне відділення надає первинну медичну допомогу населенню. Наші досвідчені лікарі проводять профілактичні огляди, діагностику та лікування широкого спектру захворювань.
+      <div id="clinical" class="section-gap">
+        <div class="sh center"><h2>Клініко-діагностичне відділення</h2></div>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="mb-2">Про відділення</h3>
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;margin-bottom:10px;">
+              Клініко-діагностичне відділення надає первинну медичну допомогу населенню. Досвідчені лікарі проводять профілактичні огляди, діагностику та лікування широкого спектру захворювань.
             </p>
-            <p style="color: var(--text-light); line-height: 1.8;">
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;">
               Відділення обладнане сучасним медичним обладнанням для проведення якісних обстежень та процедур.
             </p>
           </div>
-
-          <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Послуги відділення</h3>
-            <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+          <div class="card-blue" style="border-radius:var(--border-radius-lg);">
+            <h3 class="text-primary mb-2">Послуги відділення</h3>
+            <ul class="ul-list">
               <li>Прийом лікаря-терапевта</li>
               <li>Консультації вузьких спеціалістів</li>
               <li>Профілактичні огляди</li>
@@ -50,31 +54,26 @@
         </div>
       </div>
 
-      <!-- Ультразвукова діагностика -->
-      <div id="ultrasound" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Ультразвукова діагностика</h2>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Про кабінет УЗД</h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-              Кабінет ультразвукової діагностики оснащений сучасним обладнанням експертного класу, що дозволяє проводити високоточну діагностику різних органів і систем організму.
+      <!-- УЗД -->
+      <div id="ultrasound" class="section-gap">
+        <div class="sh center"><h2>Ультразвукова діагностика</h2></div>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="mb-2">Про кабінет УЗД</h3>
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;margin-bottom:10px;">
+              Кабінет УЗД оснащений обладнанням експертного класу для високоточної діагностики різних органів і систем організму.
             </p>
-            <p style="color: var(--text-light); line-height: 1.8;">
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;margin-bottom:14px;">
               Дослідження проводять кваліфіковані лікарі з великим досвідом роботи.
             </p>
-            
-            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-              <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text);">Запис на УЗД</h4>
-              <p style="color: var(--text-light); font-size: 0.95rem;">
-                Телефон: <a href="tel:+380675600610" style="color: var(--primary); font-weight: 600;">+38 067 5 600 610</a>
-              </p>
+            <div class="sub-card">
+              <h4>Запис на УЗД</h4>
+              <p style="color:var(--text-light);font-size:0.875rem;">Телефон: <a href="tel:+380675600610">+38 067 5 600 610</a></p>
             </div>
           </div>
-
-          <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Види досліджень</h3>
-            <ul style="color: var(--text-light); line-height: 2; padding-left: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem;">
+          <div class="card-blue" style="border-radius:var(--border-radius-lg);">
+            <h3 class="text-primary mb-2">Види досліджень</h3>
+            <ul class="ul-list uzd-two">
               <li>УЗД органів черевної порожнини</li>
               <li>УЗД нирок та сечового міхура</li>
               <li>УЗД щитоподібної залози</li>
@@ -93,79 +92,68 @@
       </div>
 
       <!-- Лабораторія -->
-      <div id="laboratory" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Лабораторія</h2>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Клінічна лабораторія</h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-              Лабораторія оснащена сучасним обладнанням для проведення широкого спектру лабораторних досліджень. Результати аналізів готуються в найкоротші терміни.
+      <div id="laboratory" class="section-gap">
+        <div class="sh center"><h2>Лабораторія</h2></div>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="mb-2">Клінічна лабораторія</h3>
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;margin-bottom:14px;">
+              Лабораторія оснащена сучасним обладнанням для широкого спектру досліджень. Результати готуються в найкоротші терміни.
             </p>
-            
-            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary);">Загальноклінічні дослідження:</h4>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; margin-bottom: 1.5rem;">
+            <h4 class="text-primary mb-1">Загальноклінічні:</h4>
+            <ul class="ul-list mb-2">
               <li>Загальний аналіз крові</li>
               <li>Загальний аналіз сечі</li>
               <li>Аналіз калу</li>
               <li>Глюкоза крові</li>
+              <li>Коагулограма</li>
             </ul>
-
-            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary);">Біохімічні дослідження:</h4>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px;">
+            <h4 class="text-primary mb-1">Біохімічні:</h4>
+            <ul class="ul-list">
               <li>Ліпідограма</li>
               <li>Печінкові проби</li>
               <li>Ниркові проби</li>
-              <li>Електроліти</li>
-              <li>Ферменти</li>
+              <li>Електроліти, ферменти</li>
             </ul>
           </div>
-
-          <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Додаткові дослідження</h3>
-            
-            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text);">Гормональні дослідження:</h4>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; margin-bottom: 1.5rem;">
+          <div class="card-blue" style="border-radius:var(--border-radius-lg);">
+            <h3 class="text-primary mb-2">Спеціальні дослідження</h3>
+            <h4 style="color:var(--text);margin-bottom:8px;">Гормональні:</h4>
+            <ul class="ul-list mb-2">
               <li>Гормони щитоподібної залози</li>
               <li>Статеві гормони</li>
               <li>Гормони гіпофіза</li>
             </ul>
-
-            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text);">Імунологічні дослідження:</h4>
-            <ul style="color: var(--text-light); line-height: 1.8; padding-left: 20px; margin-bottom: 1.5rem;">
+            <h4 style="color:var(--text);margin-bottom:8px;">Імунологічні:</h4>
+            <ul class="ul-list mb-2">
               <li>Імунограма</li>
               <li>Алергопроби</li>
               <li>Онкомаркери</li>
             </ul>
-
-            <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-              <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text);">Підготовка до аналізів</h4>
-              <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">
-                Більшість аналізів здається натще (8-12 годин без їжі). Детальну інформацію про підготовку можна отримати у лікаря або за телефоном реєстратури.
-              </p>
+            <div class="sub-card mt-2">
+              <h4>Підготовка до аналізів</h4>
+              <p style="color:var(--text-light);font-size:0.875rem;line-height:1.6;margin-top:4px;">Більшість аналізів здається натще (8–12 год без їжі). Деталі уточнюйте у лікаря або за телефоном.</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Рентгенодіагностика -->
-      <div id="xray" style="margin-bottom: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Рентгенодіагностика</h2>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-          <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Рентгенівський кабінет</h3>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;">
-              Рентгенодіагностичне відділення обладнане сучасним цифровим рентгенівським апаратом, що забезпечує високу якість знімків при мінімальному опроміненні пацієнта.
+      <div id="xray" class="section-gap">
+        <div class="sh center"><h2>Рентгенодіагностика</h2></div>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="mb-2">Рентгенівський кабінет</h3>
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;margin-bottom:10px;">
+              Відділення обладнане цифровим рентгенівським апаратом — висока якість знімків при мінімальному опроміненні.
             </p>
-            <p style="color: var(--text-light); line-height: 1.8;">
-              Результати досліджень можуть бути надані в цифровому форматі на диску або плівці.
+            <p class="text-muted" style="font-size:0.9rem;line-height:1.8;">
+              Результати надаються у цифровому форматі або на плівці.
             </p>
           </div>
-
-          <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Види рентгенологічних досліджень</h3>
-            <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+          <div class="card-blue" style="border-radius:var(--border-radius-lg);">
+            <h3 class="text-primary mb-2">Види рентгенологічних досліджень</h3>
+            <ul class="ul-list">
               <li>Рентгенографія органів грудної клітки</li>
               <li>Рентгенографія кісток та суглобів</li>
               <li>Рентгенографія хребта</li>
@@ -180,18 +168,16 @@
       </div>
 
       <!-- Рання діагностика -->
-      <div id="early-diagnosis" style="margin-bottom: 40px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Рання діагностика</h2>
-        
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); max-width: 900px; margin: 0 auto;">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text);">Програма ранньої діагностики</h3>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-            Рання діагностика захворювань - це комплекс профілактичних заходів, спрямованих на виявлення захворювань на ранніх стадіях, коли лікування найбільш ефективне.
+      <div id="early-diagnosis" class="section-gap">
+        <div class="sh center"><h2>Рання діагностика</h2></div>
+        <div class="card" style="max-width:860px;margin:0 auto;">
+          <h3 class="mb-2">Програма ранньої діагностики</h3>
+          <p class="text-muted" style="font-size:0.9rem;line-height:1.8;margin-bottom:14px;">
+            Рання діагностика — це комплекс профілактичних заходів для виявлення захворювань на ранніх стадіях, коли лікування найбільш ефективне.
           </p>
-
-          <div style="background: var(--bg-blue-light); padding: 2rem; border-radius: var(--border-radius); margin-bottom: 2rem;">
-            <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary);">Що включає програма:</h4>
-            <ul style="color: var(--text-light); line-height: 2; padding-left: 20px;">
+          <div class="card-blue mb-3" style="border-radius:var(--border-radius);">
+            <h4 class="text-primary mb-2">Що включає програма:</h4>
+            <ul class="ul-list">
               <li>Щорічні профілактичні огляди</li>
               <li>Скринінгові обстеження</li>
               <li>Онкологічні скринінги</li>
@@ -201,13 +187,10 @@
               <li>Урологічні огляди (для чоловіків)</li>
             </ul>
           </div>
-
-          <div style="padding: 1.5rem; background: var(--primary); color: white; border-radius: var(--border-radius); text-align: center;">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Записатися на обстеження</h4>
-            <p style="margin-bottom: 1rem; opacity: 0.9;">Зателефонуйте для запису на безкоштовне профілактичне обстеження</p>
-            <a href="tel:+380675600610" style="display: inline-block; background: white; color: var(--primary); padding: 12px 30px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none;">
-              +38 067 5 600 610
-            </a>
+          <div class="cta-card">
+            <h4 style="font-size:1.05rem;">Записатися на обстеження</h4>
+            <p>Зателефонуйте для запису на безкоштовне профілактичне обстеження</p>
+            <a href="tel:+380675600610" class="btn-white">+38 067 5 600 610</a>
           </div>
         </div>
       </div>
@@ -217,19 +200,8 @@
 
   <footer class="footer"></footer>
 
-  <script src="/assets/js/config.js"></script>
-  <script src="/assets/js/components/header.js"></script>
-  <script src="/assets/js/components/footer.js"></script>
-
-  <style>
-    @media (max-width: 768px) {
-      section > div > div > div {
-        grid-template-columns: 1fr !important;
-      }
-      ul {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  </style>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/components/header.js"></script>
+  <script src="../assets/js/components/footer.js"></script>
 </body>
 </html>

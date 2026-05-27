@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Наші лікарі | Миколаївська міська лікарня</title>
   <meta name="description" content="Досвідчені лікарі Миколаївської міської лікарні. Кваліфіковані спеціалісти різних профілів.">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .stats-trio { display: grid; gap: 14px; margin-bottom: 36px; }
+    .stat-box { background: var(--bg-blue-light); padding: 20px 14px; border-radius: var(--border-radius-lg); text-align: center; }
+    .stat-box .snum { font-size: 2.4rem; font-weight: 800; margin-bottom: 4px; }
+    .stat-box .slbl { color: var(--text-light); font-size: 0.95rem; }
+    @media (min-width: 480px) { .stats-trio { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px) { .stat-box .snum { font-size: 3rem; } }
+  </style>
 </head>
 <body data-page="doctors">
   <header class="header"></header>
@@ -17,162 +27,100 @@
     </div>
   </section>
 
-  <section style="padding: 60px 0;">
+  <section class="page-section">
     <div class="container">
-      
-      <div style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
-        <p style="font-size: 1.1rem; color: var(--text-light); line-height: 1.8;">
-          У Миколаївській міській лікарні працюють висококваліфіковані лікарі з великим досвідом роботи. Наші спеціалісти постійно підвищують свою кваліфікацію та впроваджують сучасні методи діагностики та лікування.
-        </p>
-      </div>
 
-      <!-- Статистика -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 80px;">
-        <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center;">
-          <div style="font-size: 3.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">50+</div>
-          <div style="color: var(--text-light); font-size: 1.1rem;">Лікарів</div>
+      <p class="text-center text-muted mb-3" style="max-width:720px;margin-left:auto;margin-right:auto;font-size:0.95rem;line-height:1.7;">
+        У Миколаївській міській лікарні працюють висококваліфіковані лікарі з великим досвідом. Наші спеціалісти постійно підвищують кваліфікацію та впроваджують сучасні методи діагностики та лікування.
+      </p>
+
+      <div class="stats-trio section-gap">
+        <div class="stat-box">
+          <div class="snum text-primary">50+</div>
+          <div class="slbl">Лікарів</div>
         </div>
-        
-        <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center;">
-          <div style="font-size: 3.5rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.5rem;">20+</div>
-          <div style="color: var(--text-light); font-size: 1.1rem;">Спеціальностей</div>
+        <div class="stat-box">
+          <div class="snum" style="color:var(--secondary);">20+</div>
+          <div class="slbl">Спеціальностей</div>
         </div>
-        
-        <div style="background: var(--bg-blue-light); padding: 2.5rem; border-radius: var(--border-radius-lg); text-align: center;">
-          <div style="font-size: 3.5rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">15+</div>
-          <div style="color: var(--text-light); font-size: 1.1rem;">Років досвіду</div>
+        <div class="stat-box">
+          <div class="snum" style="color:var(--accent);">15+</div>
+          <div class="slbl">Років досвіду</div>
         </div>
       </div>
 
-      <!-- Спеціалісти за напрямками -->
-      <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary); text-align: center;">Спеціалісти</h2>
-
-      <div style="display: grid; gap: 40px;">
-        
-        <!-- Терапевти -->
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-          <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 2rem;">🩺</span>
-            Терапевти
-          </h3>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-            Лікарі загальної практики, які проводять діагностику та лікування широкого спектру захворювань внутрішніх органів.
-          </p>
-          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius);">
-            <p style="color: var(--text); margin-bottom: 0.5rem;"><strong>Прийом:</strong> Пн-Пт, 8:00-15:00</p>
-            <p style="color: var(--text);"><strong>Запис:</strong> <a href="tel:+380675600610" style="color: var(--primary); font-weight: 600;">+38 067 5 600 610</a></p>
-          </div>
-        </div>
-
-        <!-- Хірурги -->
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-          <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--secondary); display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 2rem;">⚕️</span>
-            Хірурги
-          </h3>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-            Досвідчені хірурги виконують як планові, так і екстрені операції різної складності.
-          </p>
-          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius);">
-            <p style="color: var(--text); margin-bottom: 0.5rem;"><strong>Консультації:</strong> За попереднім записом</p>
-            <p style="color: var(--text);"><strong>Запис:</strong> <a href="tel:+380675600610" style="color: var(--secondary); font-weight: 600;">+38 067 5 600 610</a></p>
-          </div>
-        </div>
-
-        <!-- Акушер-гінекологи -->
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-          <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--accent); display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 2rem;">👶</span>
-            Акушер-гінекологи
-          </h3>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-            Ведення вагітності, лікування гінекологічних захворювань, планування сім'ї.
-          </p>
-          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius);">
-            <p style="color: var(--text); margin-bottom: 0.5rem;"><strong>Прийом:</strong> Пн-Пт, 9:00-16:00</p>
-            <p style="color: var(--text);"><strong>Запис:</strong> <a href="tel:+380675600610" style="color: var(--accent); font-weight: 600;">+38 067 5 600 610</a></p>
-          </div>
-        </div>
-
-        <!-- Педіатри -->
-        <div style="background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-          <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary-light); display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 2rem;">🧸</span>
-            Педіатри
-          </h3>
-          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-            Спеціалісти з дитячих хвороб, які піклуються про здоров'я наймолодших пацієнтів.
-          </p>
-          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: var(--border-radius);">
-            <p style="color: var(--text); margin-bottom: 0.5rem;"><strong>Прийом:</strong> Пн-Пт, 8:00-15:00</p>
-            <p style="color: var(--text);"><strong>Запис:</strong> <a href="tel:+380675600610" style="color: var(--primary-light); font-weight: 600;">+38 067 5 600 610</a></p>
-          </div>
-        </div>
-
+      <!-- Основні спеціалісти -->
+      <div class="sh center section-gap">
+        <h2>Основні спеціалісти</h2>
       </div>
 
-      <!-- Додаткові спеціалісти -->
-      <div style="margin-top: 80px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary); text-align: center;">Інші спеціалісти</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Невропатолог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Захворювання нервової системи</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Кардіолог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Серцево-судинні захворювання</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Ендокринолог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Гормональні порушення</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Офтальмолог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Захворювання очей</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">ЛОР-лікар</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Вухо-горло-ніс</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Уролог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Урологічні захворювання</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Дерматолог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Захворювання шкіри</p>
-          </div>
-
-          <div style="background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary);">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text);">Ортопед-травматолог</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Опорно-руховий апарат</p>
+      <div class="grid-2 section-gap" style="gap:16px;">
+        <div class="doctor-dept">
+          <h3 style="color:var(--primary);">🩺 Терапевти</h3>
+          <p>Лікарі загальної практики, які проводять діагностику та лікування широкого спектру захворювань внутрішніх органів.</p>
+          <div class="schedule">
+            <p><strong>Прийом:</strong> Пн–Пт, 8:00–15:00</p>
+            <p><strong>Запис:</strong> <a href="tel:+380675600610">+38 067 5 600 610</a></p>
           </div>
         </div>
+
+        <div class="doctor-dept">
+          <h3 style="color:var(--secondary);">⚕️ Хірурги</h3>
+          <p>Досвідчені хірурги виконують як планові, так і екстрені операції різної складності.</p>
+          <div class="schedule">
+            <p><strong>Консультації:</strong> за попереднім записом</p>
+            <p><strong>Запис:</strong> <a href="tel:+380675600610" style="color:var(--secondary);">+38 067 5 600 610</a></p>
+          </div>
+        </div>
+
+        <div class="doctor-dept">
+          <h3 style="color:var(--accent);">👶 Акушер-гінекологи</h3>
+          <p>Ведення вагітності, лікування гінекологічних захворювань, планування сім'ї.</p>
+          <div class="schedule">
+            <p><strong>Прийом:</strong> Пн–Пт, 9:00–16:00</p>
+            <p><strong>Запис:</strong> <a href="tel:+380675600610" style="color:var(--accent);">+38 067 5 600 610</a></p>
+          </div>
+        </div>
+
+        <div class="doctor-dept">
+          <h3 style="color:var(--primary-light);">🧸 Педіатри</h3>
+          <p>Спеціалісти з дитячих хвороб, які піклуються про здоров'я наймолодших пацієнтів.</p>
+          <div class="schedule">
+            <p><strong>Прийом:</strong> Пн–Пт, 8:00–15:00</p>
+            <p><strong>Запис:</strong> <a href="tel:+380675600610" style="color:var(--primary-light);">+38 067 5 600 610</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Інші спеціалісти -->
+      <div class="sh center section-gap">
+        <h2>Інші спеціалісти</h2>
+      </div>
+
+      <div class="specialty-grid section-gap">
+        <div class="specialty-item"><h4>Невропатолог</h4><p>Захворювання нервової системи</p></div>
+        <div class="specialty-item"><h4>Кардіолог</h4><p>Серцево-судинні захворювання</p></div>
+        <div class="specialty-item"><h4>Ендокринолог</h4><p>Гормональні порушення</p></div>
+        <div class="specialty-item"><h4>Офтальмолог</h4><p>Захворювання очей</p></div>
+        <div class="specialty-item"><h4>ЛОР-лікар</h4><p>Вухо–горло–ніс</p></div>
+        <div class="specialty-item"><h4>Уролог</h4><p>Урологічні захворювання</p></div>
+        <div class="specialty-item"><h4>Дерматолог</h4><p>Захворювання шкіри</p></div>
+        <div class="specialty-item"><h4>Ортопед-травматолог</h4><p>Опорно-руховий апарат</p></div>
       </div>
 
       <!-- Підвищення кваліфікації -->
-      <div style="margin-top: 80px; background: var(--primary); color: white; padding: 4rem; border-radius: var(--border-radius-lg); text-align: center;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Підвищення кваліфікації</h2>
-        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+      <div class="cta-card section-gap">
+        <h2 style="font-size:1.4rem;">Підвищення кваліфікації</h2>
+        <p style="max-width:700px;margin-left:auto;margin-right:auto;">
           Наші лікарі регулярно проходять курси підвищення кваліфікації, беруть участь у конференціях та семінарах, впроваджують найсучасніші методики діагностики та лікування.
         </p>
       </div>
 
       <!-- Запис на прийом -->
-      <div style="margin-top: 60px; background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); text-align: center;">
-        <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">Записатися на прийом</h3>
-        <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem;">
-          Зателефонуйте для запису до потрібного спеціаліста
-        </p>
-        <a href="tel:+380675600610" style="display: inline-block; background: var(--primary); color: white; padding: 15px 40px; border-radius: var(--border-radius); font-weight: 700; text-decoration: none; font-size: 1.2rem;">
+      <div class="card text-center">
+        <h3 class="text-primary mb-2">Записатися на прийом</h3>
+        <p class="text-muted mb-3" style="font-size:0.95rem;">Зателефонуйте для запису до потрібного спеціаліста</p>
+        <a href="tel:+380675600610" class="btn-white" style="background:var(--primary);color:white;font-size:1.1rem;padding:13px 32px;">
           📞 +38 067 5 600 610
         </a>
       </div>
@@ -182,8 +130,8 @@
 
   <footer class="footer"></footer>
 
-  <script src="/assets/js/config.js"></script>
-  <script src="/assets/js/components/header.js"></script>
-  <script src="/assets/js/components/footer.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/components/header.js"></script>
+  <script src="../assets/js/components/footer.js"></script>
 </body>
 </html>
