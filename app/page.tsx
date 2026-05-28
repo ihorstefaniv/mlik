@@ -1,16 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { siteConfig } from '@/lib/config';
+import { siteConfig, nszuPackages } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'Головна',
 };
-
-const guarantees = [
-  { icon: '🏥', title: 'Амбулаторна медична допомога', desc: 'Профілактика, діагностика, лікування та медична реабілітація' },
-  { icon: '🏨', title: 'Стаціонарна допомога дорослим', desc: 'Лікування без проведення хірургічних операцій' },
-  { icon: '⚕️', title: 'Хірургічні операції', desc: 'Планові та екстрені операції для дорослих та дітей' },
-];
 
 const whyUs = [
   { icon: '🏆', title: 'Досвідчені спеціалісти',   desc: 'Лікарі з багаторічним досвідом та постійним підвищенням кваліфікації' },
@@ -104,31 +98,85 @@ export default function HomePage() {
         <style>{`.hero-grid { @media (min-width:900px) { grid-template-columns: 1fr 1fr !important; gap: 40px !important; } }`}</style>
       </section>
 
-      {/* Guarantees */}
-      <section style={{ padding: '24px 0', background: '#FAFBFC' }}>
+      {/* НСЗУ Packages */}
+      <section style={{ padding: '36px 0', background: '#FAFBFC' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 16 }}>
+          <div style={{ textAlign: 'center', marginBottom: 28 }}>
             <span style={{
               display: 'inline-block', padding: '3px 12px',
               background: '#E8F5F3', color: 'var(--color-primary)',
-              borderRadius: 50, fontSize: 11, fontWeight: 600, marginBottom: 8,
+              borderRadius: 50, fontSize: 11, fontWeight: 600, marginBottom: 10,
             }}>Безкоштовно за програмою НСЗУ</span>
             <h2 className="sh center" style={{ paddingBottom: 0 }}>Державні медичні гарантії</h2>
-            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', maxWidth: 560, margin: '8px auto 0' }}>
-              Лікарня працює за договором з НСЗУ. Отримайте якісну медичну допомогу безкоштовно
+            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', maxWidth: 580, margin: '10px auto 0', lineHeight: 1.6 }}>
+              Лікарня уклала договір з НСЗУ та надає медичну допомогу за 12 пакетами — безкоштовно для пацієнтів
             </p>
           </div>
-          <div className="grid-3" style={{ marginTop: 16 }}>
-            {guarantees.map(g => (
-              <div key={g.title} className="card" style={{ padding: 18 }}>
-                <div style={{ fontSize: '1.9rem', marginBottom: 8 }}>{g.icon}</div>
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 8 }}>{g.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', lineHeight: 1.5 }}>{g.desc}</p>
+
+          <div style={{ display: 'grid', gap: 16 }} className="nszu-grid">
+            {nszuPackages.map(group => (
+              <div key={group.group} style={{
+                background: '#fff',
+                border: '1px solid var(--color-border)',
+                borderRadius: 12,
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-sm)',
+              }}>
+                {/* Group header */}
+                <div style={{
+                  display: 'flex', alignItems: 'center', gap: 10,
+                  padding: '12px 18px',
+                  background: `${group.color}12`,
+                  borderBottom: `1px solid ${group.color}28`,
+                }}>
+                  <span style={{
+                    width: 34, height: 34, borderRadius: 8,
+                    background: group.color,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: '1rem', flexShrink: 0,
+                  }}>{group.icon}</span>
+                  <h3 style={{ fontSize: '0.9rem', fontWeight: 700, margin: 0, color: 'var(--color-text)' }}>
+                    {group.group}
+                  </h3>
+                  <span style={{
+                    marginLeft: 'auto', fontSize: '0.72rem', fontWeight: 700,
+                    color: group.color, background: `${group.color}18`,
+                    padding: '2px 8px', borderRadius: 20,
+                    border: `1px solid ${group.color}33`,
+                    flexShrink: 0,
+                  }}>{group.items.length} пакети</span>
+                </div>
+                {/* Items */}
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {group.items.map((pkg, i) => (
+                    <li key={pkg.num} style={{
+                      display: 'flex', alignItems: 'flex-start', gap: 12,
+                      padding: '10px 18px',
+                      borderBottom: i < group.items.length - 1 ? '1px solid var(--color-border)' : 'none',
+                    }}>
+                      <span style={{
+                        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                        minWidth: 28, height: 22, borderRadius: 6,
+                        background: `${group.color}18`,
+                        color: group.color, fontSize: '0.7rem', fontWeight: 800,
+                        flexShrink: 0, marginTop: 1,
+                      }}>#{pkg.num}</span>
+                      <span style={{ fontSize: '0.85rem', color: 'var(--color-text)', lineHeight: 1.5 }}>
+                        {pkg.title}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
+
+          <p style={{ textAlign: 'center', marginTop: 18, fontSize: '0.78rem', color: 'var(--color-text-light)' }}>
+            Для отримання послуг за пакетами НСЗУ необхідне направлення від лікаря або звернення до приймального відділення
+          </p>
         </div>
       </section>
+      <style>{`.nszu-grid { @media (min-width:768px) { grid-template-columns: 1fr 1fr !important; } }`}</style>
 
       {/* Why us */}
       <section style={{ padding: '24px 0', background: 'var(--color-bg-blue-light)' }}>

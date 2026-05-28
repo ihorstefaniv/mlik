@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Col 4 — contacts */}
           <div>
             <div className="footer-heading">Контакти</div>
-            <ul className="footer-nav" style={{ gap: 8 }}>
+            <ul className="footer-nav">
               <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem' }}>
                 📍 {siteConfig.contact.address}, {siteConfig.contact.city}
               </li>
@@ -82,7 +82,7 @@ export default function Footer() {
                   ✉️ {siteConfig.contact.email}
                 </a>
               </li>
-              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', lineHeight: 1.5 }}>
+              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', lineHeight: 1.6 }}>
                 🕐 Поліклініка: Пн–Пт 8:00–16:00<br />
                 Стаціонар: цілодобово
               </li>
@@ -93,10 +93,10 @@ export default function Footer() {
         {/* USAID notice */}
         <div style={{
           borderTop: '1px solid rgba(255,255,255,0.08)',
-          paddingTop: 14, paddingBottom: 14,
+          paddingTop: 20, paddingBottom: 20,
           fontSize: '0.72rem',
           color: 'rgba(255,255,255,0.45)',
-          lineHeight: 1.6,
+          lineHeight: 1.7,
         }}>
           {siteConfig.usaid}
         </div>
