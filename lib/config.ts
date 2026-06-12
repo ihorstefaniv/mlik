@@ -16,8 +16,8 @@ export const siteConfig = {
   },
 
   social: {
-    facebook: '#',
-    instagram: '#',
+    facebook: 'https://www.facebook.com/p/%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0-%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B0-%D0%BB%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F-%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96-100063628193144/',
+    instagram: 'https://www.instagram.com/mykolayivska_miska_likarnya/',
   },
 
   usaid: "Цей сайт підготовлено за підтримки Агентства США з міжнародного розвитку (USAID), наданої від імені народу Сполучених Штатів Америки за підтримки Програми Уряду Великої Британії «Good Governance Fund». Відповідальність за зміст несе виключно компанія ГОБ «Джойнт Консалтинг».",
@@ -56,9 +56,10 @@ export const navItems = [
     submenu: [
       { title: 'Терапевтичне відділення',             href: '/inpatient/#therapy' },
       { title: 'Хірургічне відділення',               href: '/inpatient/#surgery' },
-      { title: 'Реабілітаційне відділення',           href: '/inpatient/#rehabilitation' },
-      { title: 'Акушерсько-гінекологічне відділення', href: '/inpatient/#gynecology' },
+      { title: 'Гінекологічне відділення',            href: '/inpatient/#gynecology' },
       { title: 'Дитяче відділення',                   href: '/inpatient/#pediatrics' },
+      { title: 'Реабілітаційне відділення',           href: '/inpatient/#rehabilitation' },
+      { title: 'Паліативне відділення',               href: '/inpatient/#palliative' },
       { title: 'Приймальне відділення',               href: '/inpatient/#admission' },
       { title: 'Відділення інтенсивної терапії',      href: '/inpatient/#intensive-care' },
     ],
@@ -66,10 +67,17 @@ export const navItems = [
   {
     title: 'Платні послуги',       href: '/services/',     id: 'services',
     submenu: [
-      { title: 'Медичні огляди',         href: '/services/#medical-exams' },
+      { title: 'Медичні огляди',          href: '/services/#medical-exams' },
       { title: 'Лабораторні дослідження', href: '/services/#lab-tests' },
-      { title: 'Оздоровчі масажі',       href: '/services/#massage' },
-      { title: 'Інші послуги',           href: '/services/#other' },
+      { title: 'Оздоровчі масажі',        href: '/services/#massage' },
+      { title: 'Інші послуги',            href: '/services/#other' },
+    ],
+  },
+  {
+    title: 'Інформація', href: '/info/', id: 'info',
+    submenu: [
+      { title: 'Новини',              href: '/info/#news' },
+      { title: 'Благодійна допомога', href: '/info/#charity' },
     ],
   },
 ] as const;
@@ -104,8 +112,8 @@ export const nszuPackages = [
     ],
   },
   {
-    group: 'Ендоскопічна діагностика',
-    icon: '🔬',
+    group: 'Лабораторна діагностика',
+    icon: '🧪',
     color: '#5DADE2',
     items: [
       { num: 12, title: 'Езофагогастродуоденоскопія' },

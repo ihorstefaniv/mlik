@@ -1,25 +1,21 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { siteConfig } from '@/lib/config';
 
 export const metadata: Metadata = { title: 'Наші лікарі' };
 
 const departments = [
-  { id: 'therapy',         name: 'Терапевтичне відділення' },
-  { id: 'surgery',         name: 'Хірургічне відділення' },
-  { id: 'gynecology',      name: 'Акушерсько-гінекологічне відділення' },
-  { id: 'pediatrics',      name: 'Дитяче відділення' },
-  { id: 'rehabilitation',  name: 'Реабілітаційне відділення' },
-  { id: 'ambulatory',      name: 'Поліклініка' },
-];
-
-const doctors = [
-  { name: 'Одноріг Сергій Михайлович',         position: 'Головний лікар',              dept: 'therapy',        photo: '/assets/images/about/Одноріг_edited.jpg' },
-  { name: 'Пришляк Оксана Романівна',           position: 'Заступник головного лікаря',  dept: 'therapy',        photo: '/assets/images/about/Пришляк_edited_edited.jpg' },
-  { name: 'Лікар терапевтичного відділення',   position: 'Лікар-терапевт',              dept: 'therapy',        photo: null },
-  { name: 'Лікар хірургічного відділення',     position: 'Лікар-хірург',                dept: 'surgery',        photo: null },
-  { name: 'Лікар гінекологічного відділення',  position: 'Лікар акушер-гінеколог',      dept: 'gynecology',     photo: null },
-  { name: 'Лікар дитячого відділення',         position: 'Лікар-педіатр',               dept: 'pediatrics',     photo: null },
-  { name: 'Лікар реабілітаційного відділення', position: 'Лікар-реабілітолог',          dept: 'rehabilitation', photo: null },
-  { name: 'Лікар поліклініки',                 position: 'Лікар загальної практики',    dept: 'ambulatory',     photo: null },
+  { name: 'Терапевтичне відділення',             href: '/inpatient/#therapy' },
+  { name: 'Хірургічне відділення',               href: '/inpatient/#surgery' },
+  { name: 'Акушерсько-гінекологічне відділення', href: '/inpatient/#gynecology' },
+  { name: 'Дитяче відділення',                   href: '/inpatient/#pediatrics' },
+  { name: 'Реабілітаційне відділення',           href: '/inpatient/#rehabilitation' },
+  { name: 'Паліативне відділення',               href: '/inpatient/#palliative' },
+  { name: 'Відділення інтенсивної терапії',      href: '/inpatient/#intensive-care' },
+  { name: 'Клініко-діагностичне відділення',     href: '/ambulatory/#clinical' },
+  { name: 'Ультразвукова діагностика',           href: '/ambulatory/#ultrasound' },
+  { name: 'Лабораторія',                         href: '/ambulatory/#laboratory' },
+  { name: 'Рентгенодіагностика',                 href: '/ambulatory/#xray' },
 ];
 
 export default function DoctorsPage() {
@@ -33,65 +29,66 @@ export default function DoctorsPage() {
       </div>
 
       <section className="section">
-        <div className="container">
-          <div style={{ display: 'grid', gap: 24 }} className="docs-grid">
-            {/* Sidebar */}
-            <aside>
-              <div className="dept-sidebar">
-                <div className="dept-sidebar-title">Відділення</div>
-                {departments.map(d => (
-                  <a key={d.id} href={`#${d.id}`}>{d.name}</a>
-                ))}
-              </div>
-            </aside>
+        <div className="container" style={{ maxWidth: 800 }}>
 
-            <div>
-              {departments.map(dept => {
-                const deptDoctors = doctors.filter(doc => doc.dept === dept.id);
-                return (
-                  <div key={dept.id} id={dept.id} style={{ marginBottom: 36 }}>
-                    <h2 className="sh">{dept.name}</h2>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 14 }}>
-                      {deptDoctors.map(doc => (
-                        <div key={doc.name} className="doctor-dept">
-                          <div className="doctor-dept-photo" style={{
-                            background: doc.photo ? 'transparent' : 'linear-gradient(135deg, var(--color-primary-light), var(--color-primary))',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            fontSize: '1.5rem', color: '#fff',
-                            overflow: 'hidden',
-                          }}>
-                            {doc.photo ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img src={doc.photo} alt={doc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                            ) : '👨‍⚕️'}
-                          </div>
-                          <div className="doctor-dept-info">
-                            <h4>{doc.name}</h4>
-                            <p>{doc.position}</p>
-                          </div>
-                        </div>
-                      ))}
-                      {deptDoctors.length === 0 && (
-                        <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', fontStyle: 'italic' }}>
-                          Інформація про лікарів відділення оновлюється
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-
-              <div className="cta-card">
-                <h3>Потрібна консультація?</h3>
-                <p>Запишіться на прийом до необхідного спеціаліста</p>
-                <a href="tel:+380675600610" className="btn-white">📞 +38 067 5 600 610</a>
-              </div>
-            </div>
+          {/* Відділення */}
+          <h2 className="sh" style={{ marginBottom: 16 }}>Відділення лікарні</h2>
+          <div className="grid-2" style={{ gap: 10, marginBottom: 48 }}>
+            {departments.map(d => (
+              <Link key={d.name} href={d.href} style={{
+                display: 'block', padding: '11px 14px',
+                background: '#fff',
+                border: '1px solid var(--color-border)',
+                borderRadius: 7,
+                fontSize: '0.875rem', color: 'var(--color-text)', textDecoration: 'none',
+                transition: 'border-color 0.15s',
+              }}
+              className="dept-link"
+              >
+                {d.name}
+              </Link>
+            ))}
           </div>
+
+          {/* In progress notice */}
+          <div style={{
+            padding: '24px 28px',
+            background: '#F4F7F6',
+            border: '1px solid var(--color-border)',
+            borderLeft: '3px solid var(--color-primary)',
+            borderRadius: 8,
+            marginBottom: 32,
+          }}>
+            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', lineHeight: 1.7, margin: 0 }}>
+              Сторінка в процесі наповнення. Повна інформація про лікарів та графік прийому з'являться найближчим часом. Для запису на прийом до конкретного спеціаліста зателефонуйте або скористайтесь онлайн-записом через Doctor Eleks.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div style={{
+            display: 'flex', flexWrap: 'wrap', alignItems: 'center',
+            justifyContent: 'space-between', gap: 16,
+            padding: '20px 24px',
+            background: 'var(--color-primary)',
+            borderRadius: 8, color: '#fff',
+          }}>
+            <div>
+              <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: 4 }}>Записатися на прийом</div>
+              <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Телефоном або через систему Doctor Eleks</div>
+            </div>
+            <a href={siteConfig.contact.phoneHref} style={{
+              display: 'inline-block', padding: '9px 20px', borderRadius: 6,
+              background: '#fff', color: 'var(--color-primary-dark)',
+              fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', whiteSpace: 'nowrap',
+            }}>
+              {siteConfig.contact.phone}
+            </a>
+          </div>
+
         </div>
       </section>
 
-      <style>{`.docs-grid { @media (min-width:768px) { grid-template-columns: 220px 1fr !important; } }`}</style>
+      <style>{`.dept-link:hover { border-color: var(--color-primary); color: var(--color-primary); }`}</style>
     </>
   );
 }

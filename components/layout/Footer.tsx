@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { navItems, partners, siteConfig } from '@/lib/config';
+import Image from 'next/image';
+import { partners, siteConfig } from '@/lib/config';
 
 export default function Footer() {
   return (
@@ -18,15 +19,49 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className="footer-content">
       <div className="container">
         <div className="footer-grid">
-          {/* Col 1 — logo + desc */}
+
+          {/* Col 1 — logo + desc + emergency + social */}
           <div>
-            <div className="footer-logo">🏥 {siteConfig.name}</div>
+            <div style={{ marginBottom: 10 }}>
+              <div style={{ background: '#fff', borderRadius: 8, padding: '4px 10px', display: 'inline-flex' }}>
+                <Image src="/logo.png" alt={siteConfig.name} width={120} height={40} style={{ display: 'block', objectFit: 'contain' }} />
+              </div>
+            </div>
             <p className="footer-desc">
               Медична допомога вторинного рівня для мешканців міста Миколаїв та Львівської області.
             </p>
-            <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
+
+            {/* 24/7 emergency block */}
+            <div style={{
+              background: 'rgba(231,76,60,0.12)',
+              border: '1px solid rgba(231,76,60,0.28)',
+              borderRadius: 8,
+              padding: '10px 12px',
+              marginTop: 14,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+            }}>
+              <span style={{ fontSize: '1.1rem', flexShrink: 0 }}>🚑</span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 1 }}>
+                  Приймальне відділення
+                </div>
+                <a href={siteConfig.contact.phoneHref} style={{ color: '#ff8a80', fontWeight: 700, fontSize: '0.9rem' }}>
+                  {siteConfig.contact.phone}
+                </a>
+              </div>
+              <span style={{
+                fontSize: '0.6rem', background: '#E74C3C', color: '#fff',
+                padding: '2px 7px', borderRadius: 4, fontWeight: 700, flexShrink: 0,
+              }}>24/7</span>
+            </div>
+
+            {/* Social */}
+            <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
               <a href={siteConfig.social.facebook} className="social-link" aria-label="Facebook">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -40,54 +75,91 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — nav */}
+          {/* Col 2 — Пацієнту */}
           <div>
-            <div className="footer-heading">Навігація</div>
+            <div className="footer-heading">Пацієнту</div>
             <ul className="footer-nav">
-              {navItems.map(item => (
-                <li key={item.id}>
-                  <Link href={item.href}>{item.title}</Link>
-                </li>
-              ))}
+              <li><Link href="/ambulatory/">Амбулаторна допомога</Link></li>
+              <li><Link href="/inpatient/">Стаціонарна допомога</Link></li>
+              <li><Link href="/services/">Платні послуги</Link></li>
+              <li><Link href="/idp/">Для ВПО</Link></li>
+              <li><Link href="/doctors/">Лікарі</Link></li>
             </ul>
           </div>
 
-          {/* Col 3 — departments */}
+          {/* Col 3 — Відділення */}
           <div>
             <div className="footer-heading">Відділення</div>
             <ul className="footer-nav">
+              <li><Link href="/ambulatory/#clinical">Клініко-діагностичне</Link></li>
+              <li><Link href="/ambulatory/#ultrasound">УЗД</Link></li>
               <li><Link href="/inpatient/#therapy">Терапевтичне</Link></li>
               <li><Link href="/inpatient/#surgery">Хірургічне</Link></li>
               <li><Link href="/inpatient/#gynecology">Акушерсько-гінекологічне</Link></li>
               <li><Link href="/inpatient/#pediatrics">Дитяче</Link></li>
               <li><Link href="/inpatient/#rehabilitation">Реабілітаційне</Link></li>
-              <li><Link href="/ambulatory/">Поліклініка</Link></li>
             </ul>
           </div>
 
-          {/* Col 4 — contacts */}
+          {/* Col 4 — Контакти */}
           <div>
             <div className="footer-heading">Контакти</div>
-            <ul className="footer-nav">
-              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem' }}>
-                📍 {siteConfig.contact.address}, {siteConfig.contact.city}
-              </li>
-              <li>
-                <a href={siteConfig.contact.phoneHref} style={{ fontWeight: 700, color: 'var(--color-accent)' }}>
-                  📞 {siteConfig.contact.phone}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${siteConfig.contact.email}`}>
-                  ✉️ {siteConfig.contact.email}
-                </a>
-              </li>
-              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', lineHeight: 1.6 }}>
-                🕐 Поліклініка: Пн–Пт 8:00–16:00<br />
-                Стаціонар: цілодобово
-              </li>
-            </ul>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: 1 }}>📍</span>
+                <div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 2 }}>Адреса</div>
+                  <span style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>
+                    {siteConfig.contact.address},<br />
+                    {siteConfig.contact.city}, {siteConfig.contact.region}
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: 1 }}>📞</span>
+                <div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 2 }}>Телефон</div>
+                  <a href={siteConfig.contact.phoneHref} style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-accent)' }}>
+                    {siteConfig.contact.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: 1 }}>✉️</span>
+                <div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 2 }}>Email</div>
+                  <a href={`mailto:${siteConfig.contact.email}`} style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.75)' }}>
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* Hours table */}
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 12 }}>
+                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
+                  Графік роботи
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+                  {[
+                    { label: 'Поліклініка', hours: 'Пн–Пт 8:00–16:00', accent: false },
+                    { label: 'Стаціонар',   hours: 'Цілодобово',        accent: true  },
+                  ].map(row => (
+                    <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.82rem' }}>
+                      <span style={{ color: 'rgba(255,255,255,0.55)' }}>{row.label}</span>
+                      <span style={{ fontWeight: 600, color: row.accent ? 'var(--color-accent)' : 'rgba(255,255,255,0.85)' }}>
+                        {row.hours}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
 
         {/* USAID notice */}
@@ -101,6 +173,7 @@ export default function Footer() {
           {siteConfig.usaid}
         </div>
       </div>
+      </div>{/* /footer-content */}
 
       <div className="footer-bottom">
         <div className="container">
