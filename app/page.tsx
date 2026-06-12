@@ -2,7 +2,64 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { siteConfig, nszuPackages } from '@/lib/config';
 
-export const metadata: Metadata = { title: 'Головна' };
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Миколаївська міська лікарня — Миколаїв, Львівська область',
+  },
+  description: 'Офіційний сайт. Амбулаторна та стаціонарна допомога, хірургія, УЗД, лабораторія. Безкоштовно за 12 пакетами НСЗУ. ☎ +38 067 5 600 610. Миколаїв, Львівська обл.',
+  alternates: {
+    canonical: 'https://www.ml.lviv.ua/',
+  },
+  openGraph: {
+    title: 'Миколаївська міська лікарня — Миколаїв, Львівська область',
+    description: 'Амбулаторна та стаціонарна медична допомога, хірургія, діагностика. Безкоштовно за договором з НСЗУ.',
+    url: 'https://www.ml.lviv.ua/',
+    type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Миколаївська міська лікарня',
+      },
+    ],
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['MedicalOrganization', 'LocalBusiness'],
+  name: 'Миколаївська міська лікарня',
+  alternateName: 'ММЛ',
+  url: 'https://www.ml.lviv.ua',
+  telephone: '+380675600610',
+  email: 'mukolaiv_kcrl@ukr.net',
+  description: 'Заклад вторинної медичної допомоги у Миколаєві Львівської області. Амбулаторне та стаціонарне лікування, хірургія, діагностика, 12 пакетів НСЗУ.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'вул. Федьковича, 11',
+    addressLocality: 'Миколаїв',
+    addressRegion: 'Львівська область',
+    postalCode: '81600',
+    addressCountry: 'UA',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 49.5298,
+    longitude: 23.9682,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  medicalSpecialty: ['Surgery', 'InternalMedicine', 'Pediatrics', 'Gynecology', 'PhysicalTherapy', 'PalliativeCare'],
+  sameAs: [
+    'https://www.facebook.com/p/%D0%9C%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0-%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B0-%D0%BB%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F-%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%96-100063628193144/',
+    'https://www.instagram.com/mykolayivska_miska_likarnya/',
+  ],
+};
 
 // TODO: замінити на реальний URL Doctor Eleks
 const BOOKING_URL = '#';
@@ -33,6 +90,10 @@ const services = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section style={{
         background: 'linear-gradient(135deg, #4A9B8E 0%, #3A7B6E 100%)',

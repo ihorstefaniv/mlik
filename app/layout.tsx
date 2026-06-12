@@ -20,11 +20,18 @@ const sourceSans3 = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.ml.lviv.ua'),
   title: {
     default: 'Миколаївська міська лікарня',
     template: '%s | Миколаївська міська лікарня',
   },
-  description: 'Миколаївська міська лікарня — спеціалізована медична допомога. Амбулаторне та стаціонарне лікування, діагностика, медичні огляди.',
+  description: 'Офіційний сайт Миколаївської міської лікарні. Амбулаторне та стаціонарне лікування, хірургія, діагностика. Безкоштовно за 12 пакетами НСЗУ. Миколаїв, Львівська область.',
+  openGraph: {
+    siteName: 'Миколаївська міська лікарня',
+    locale: 'uk_UA',
+    type: 'website',
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
